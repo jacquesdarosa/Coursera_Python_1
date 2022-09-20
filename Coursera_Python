@@ -1,0 +1,429 @@
+# Coursera_Python_course
+
+
+Chapter 1
+
+SENTENCES OR LINES
+
+x = 1 # this a statement
+
+x = x + 1 # this a statement with expression
+
+print(x) # Print statement
+
+reserve words in Python : if, else, import, class, None, While, pass, return, from, (and many others)
+
+X is a variable
+= is a Operator
+1 is a Constant
+print is a Function
+
+# running Python on >>> is interactive
+# running Python on a Script like VS_Code is much better
+
+program: (a flow chart)
+x = 2
+print(x)
+x= x + 2
+print(x
+
+output
+2
+4
+
+CONDITIONAL STEPS
+
+Program:
+x= 5
+if x < 10:
+   print('Smaller')
+if x > 20:
+   print('Bigger')
+print('Finis')
+Output:
+Smaller
+
+REPEATED STEPS
+
+Program:
+n = 5
+while n > 0 :
+    print(n)
+    n = n -1
+print('Blastoff!')
+
+# Loops (repeated steps) have ITERATION VARIABLES that change each time through a loop
+
+Output:
+5
+4
+3
+2
+1
+Blastoff!
+
+------------------------
+
+Chapter 2
+
+EXPRESSIONS
+
+Constants
+Reserve words
+
+A variable is a named place in the memory where a programmer can store data and later retrieve the data using  the variable "name"
+
+
+ x = 12.2      (hey Python find some memory and put this in this variable) so Python will do just this ----x 12.2
+ Y = 14        (hey Python find some memory and put this in this variable) so Python will do just this ----y 14
+
+ programmers get to choose the name of VARIABLES
+ YOU CAN CHANGE THE CONTENTS OF A VARIABLE IN A LATER STATEMENT
+
+Now I decide i want X = 100 (hey Python does not create new memory, just put x = 100 in it)
+
+VARIABLES must start with a letter or underscore, although we should avoid underscore as Python uses it for other functions
+
+Good names for variables: spam  eggs spam23 _speed
+Bad: 23spam #sign var.12
+Different: spam Spam Spam
+
+Mnemonic for choosing variable names
+
+a = 35.0
+b = 12.5
+c = a * b
+this up here is not Mnemonic
+
+Mnemonic is:
+hours = 35.0
+rate = 12.50
+pay = hours * rate
+print(pay)
+
+assignment statement (=)
+
+An assignment statement consists of an expression on the right-hand side and a variable to store the result
+X = 3.9 * x * (1-x)
+
+Example:
+
+X = 0.6
+
+X = 3.9 * 0.6 * (1- 0.6)
+(the new(temporary) of value of X on the right-hand side of the equality is 0.4 )
+then Python will rewrite the result of the equality to give the output  X = 0.936 (erasing the old value X = 0.6)
+
+The right side is an expression. Once the expression is evaluated, the result is placed (assigned to) the variable on the left side (i.e, X)
+
+
+Increment is the way to change a variable X = 6, X = X +1, new X = 7
+
+
+EXPRESSION IN DETAIL (Right-hand side)
+
+Integers are whole numbers 1, 2, 45, 56,-14,-2
+Floating point numbers: 1.0, 98.5,-2.5
+
+print(float(99)) + 100)
+199.0
+
+f = float(i)
+print(f)
+42.0
+
+User input
+
+name = input('Who are you?')
+print('Welcome', name)
+who are you?
+Jacques
+Welcome Jacques
+space between Welcome and Jacques is caused by the comma (,) between 'Welcome', name
+
+
+# COMMENTS
+# Get the name of the file and open it
+name = input('Enter file:')
+handle = open(name, 'r')
+
+# Count word frequency (histogram)
+counts = dict()
+for line in handle:
+    words = line.split()
+    for word in words:
+        counts[word] = counts.get(word, 0) + 1
+# Find the most common word
+bigcount = None
+bigword = None
+for word, count in counts.items():
+    if bigcount is None or count > bigcount:
+        bigword = word
+        bigcount = count
+# All done
+print(bigword, bigcount)
+
+Practical example of a small programmer
+# Convert elevator floors
+
+inp = input('Europe floor?')
+usf = int(inp) + 1 # here this int function convert the answer for the string 'Europe floor' like 0 (here below) or any number into an integer
+
+print('US floor', usf)
+
+Europe floor ? 0
+Us floor 1
+
+
+CONDITIONAL steps
+
+If
+
+Comparison Operators
+
+< less
+<= less than or Equal to
+== Equal to
+>= Greater than or Equal to
+> Greater than
+!= Not equal
+
+One-way decisions
+
+x = 5
+print('Before 5')
+if x == 5 :
+   print('is 5')
+   print('is still 5')
+   print('third 5')
+print( 'Afterwards 5')
+print('Before 6')
+if x == 6 :
+   print('is 6')
+   print('is still 6')
+   print('third is 6')
+print('Afterwards 6')
+
+Two-way decisions
+
+X = 4
+if X > 2 :
+   print('Bigger')
+else:
+   print('Smaller')
+print('All done')
+
+output:
+Bigger
+All done
+
+Multi-way decisions
+
+x = 0
+
+if x < 2 :
+   print('small')
+
+elif x < 10 :
+   print('Medium')
+
+else:
+  print('LARGE')
+print('All done')
+
+other examples used by the instructor on video 02/03
+
+'''X = 4
+if X > 2 :
+   print('Bigger')
+else:
+   print('Smaller')
+print('All done')'''
+
+'''x = 2.1
+
+if x < 2 :
+   print('small')
+
+elif x < 10 :
+   print('Medium')
+
+else:
+  print('LARGE')
+print('All done')'''
+
+x = 7
+if x < 2 :
+  print('below 2')
+elif x < 20 :  # here the instructor constructed this way, the code stops there, order is not quite correct
+
+  print('below 20')
+elif x < 10 :
+  print('below 10')
+else:
+    print('something else')
+print('see video 3 about conditionals')
+
+# 03 - 01 EX - on conditional execution - Python for Everybody Course https://www.youtube.com/watch?v=crLerB4ZxMI
+
+Hours = input('enter no hours=')
+Rate = input('enter rate=')
+fh = float(Hours)
+fr = float(Rate)
+print(fh, fr)
+x = fh * fr
+print('PAY=', x)
+
+if fh > 40 :
+    print('Overtime')
+else:
+    print('Regular')
+
+other version of the same code above, but computing different rate for Overtime
+Hours = input('enter no hours=')
+Rate = input('enter rate=')
+fh = float(Hours)
+fr = float(Rate)
+
+if fh > 40 :
+    # print('Overtime') # the instructor is better in real code not to print all that, for it could bug the code
+    reg = fh * fr
+    ovt = (fh - 40)*(fr*0.5)
+    # print(reg, ovt) # the instructor is better in real code not to print all that, for it could bug the code
+    xt = reg + ovt
+
+else:
+    # print('Regular') # the instructor is better in real code not to print all that, for it could bug the could
+    xt = fh * fr
+print('PAY=', xt)
+
+ # 03 -01 EX on conditional execution -https://www.youtube.com/watch?v=-iUA4cCKRlM
+
+ Enter hours: 20
+ Enter rate: nine
+ Error, please enter numeric input
+
+ Enter hours: forty
+ Error, please enter numeric input
+
+ USE: Try and except
+
+ Hours = input('enter no hours=')
+Rate = input('enter rate=')
+try:
+   fh = float(Hours)
+   fr = float(Rate)
+except:
+   print('Error, please insert a numeric input')
+   quit()
+
+if fh > 40 :
+    print('Overtime')
+    reg = fh * fr
+    ovt = (fh - 40)*(fr*0.5)
+    print(reg, ovt)
+    xt = reg + ovt
+
+else:
+    print('Regular')
+    xt = fh * fr
+print('PAY=', xt)
+
+
+CHAPTER 4 functions
+def thing(): does not run code, it remembers what you call a function def
+then you invoke(call)
+thing() ... # def is a function that is defined by the programmer
+
+Functions: print(), type(), float(), int(), ....
+
+Building our own functions: video_04
+
+Once we have defined a function def, we can call it
+
+def greet(lang):
+    if lang == 'es':
+      print('Hola')
+    elif lang == 'fr':
+      print('Bonjour')
+    else:
+        print('Hello')
+greet('fr')
+greet('es')
+greet('xy')
+
+
+def greet(lang):
+    if lang == 'es':
+      return 'Hola'
+    elif lang == 'fr':
+      return 'Bonjour'
+    else:
+        return 'Hello'
+print(greet('fr'), 'John')
+print(greet('es'), 'Mike')
+print(greet('xy'), 'Sarah')
+
+Output:
+Bonjour John
+Hola Mike
+Hello Sarah
+
+We can have multiple Parameters/ Arguments in a functions
+def addtwo(a,b):
+    added = a + b
+    return added
+x = addtwo(3,5)
+print(x)
+Output: 8
+
+
+Chapter 5 Loops and Iterations
+
+WHILE LOOP
+
+# 1 example
+n = 5
+while n > 0 :
+    print(n)
+    n = n -1
+print('Blastoff')
+print(n)
+
+Output: the loop goes from 5 to 1, the it stops
+5
+4
+3
+2
+1
+Blastoff
+0
+
+# 2 example
+n = 0
+while True:
+    if n == 3:
+        break
+    print(n)
+    n = n + 1
+
+output:
+0
+1
+2
+
+DEFINITE LOOPS  video no. 5 Iterations B
+
+# 1st examples
+for i in [5, 4, 3 , 2, 1] :
+    print(i)
+print('Blastoff')
+
+NOTE: i is the iteration variable that changes through each iteration of the LOOP
+
+output:
+5
+4
+3
+2
+1
